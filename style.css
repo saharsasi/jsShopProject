@@ -1,0 +1,11 @@
+@import './styles/reset.css';
+
+@import './styles/catagory/catagory.css';
+@import './styles/navBar/navBar.css';
+
+
+.container {
+    margin-top: 55px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
