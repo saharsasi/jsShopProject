@@ -11,7 +11,7 @@ const products = [
             model: "iphone 13",
             price: 800,
             colors,
-            productInfo: 'Featuring a sleek and durable design, an advanced new dual-camera system for improved photos and videos in low light, and introducing Cinematic mode',
+            productInfo: `Featuring a sleek and durable design, an advanced new dual-camera system for improved photos and videos in low light, and introducing Cinematic mode`,
             imgUrl:'https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iphone13_hero_09142021_inline.jpg.medium.jpg'
         }, {
             model: "iphone 13 pro",

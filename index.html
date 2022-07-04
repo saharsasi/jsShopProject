@@ -1,87 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sahar & Ilay Phone Shop</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/63e82b60bb.js" crossorigin="anonymous"></script>
+  </head>
 
-<body>
+  <body>
     <nav>
-        <input type="text" placeholder="Search">
+      <div class="upper__Nav">
+        <img
+          class="logo"
+          src="/images/Logo.png"
+          title="Your Store"
+          alt="Your Store"
+        />
+        <div class="nav__Search">
+          <input type="text" placeholder="Search" />
+          <button>Search</button>
+        </div>
+        <div class="Nav__Actions">
+          <!-- //TODO Add Favorits here  -->
+          <div class="sign__In">
+              <div class="Action__Icon">
+                  <img  src="./images/user-solid.svg" alt="">
+                </div>
+                
+                <button>SIGN /<br>REGISTER</button>
+            </div>
+            <div class="sign__In">
+                <div class="Action__Icon">
+                    <img
+                    class="cart"
+                    src="./images/cart-shopping-solid.svg"
+                    alt="My Cart"
+                  /> 
+                </div>
+                  <button>MY CART<br>Items</button>
+              </div>
+          
+        </div>
+      </div>
+      <div class="bottom__Nav">
         <ul>
-            <li>Home</li>
-            <li>Catagory</li>
-            <li>Products</li>
-            <li>Cart</li>
-            <li>Favorites</li>
+          <li>Apple</li>
+          <li>Samsung</li>
+          <li>Xiaomi</li>
+          <li>Huawei</li>
+          <li>Products</li>
         </ul>
+      </div>
     </nav>
 
     <div class="container">
+      <!-- <section class="homepage">home page</section> -->
+      <section class="catagoryPage">
+        <header class="catagoryPage__header">
+          <h1>Catagory: <span>Iphones</span></h1>
+        </header>
 
-        <!-- <section class="homepage">home page</section> -->
-        <section class="catagoryPage">
-
-            <header class="catagoryPage__header">
-                <h1>Catagory: <span>Iphones</span></h1>
-            </header>
-
-            <div class="Catagory__Products__Container">
-
-
-
-                <article class="product">
-                    <img
-                        src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iphone13_hero_09142021_inline.jpg.medium.jpg">
-                    <h1 class="product__title">iphone 12</h1>
-                    <h3>Featuring a sleek and durable design, an advanced new dual-camera system for improved photos and
-                        videos in low light, and introducing Cinematic mode</h3>
-                    <h2 class="product__price">Price: <span class="product__price__value">1000</span></h2>
-                    <button>Buy</button>
-                </article>
-                <article class="product">
-                    <img
-                        src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iphone13_hero_09142021_inline.jpg.medium.jpg">
-                    <h1 class="product__title">Iphone 12</h1>
-                    <h3>Featuring a sleek and durable design, an advanced new dual-camera system for improved photos and
-                        videos in low light, and introducing Cinematic mode</h3>
-                    <h2 class="product__price">Price: <span class="product__price__value">1000</span></h2>
-                    <button>Buy</button>
-                </article>
-                <article class="product">
-                    <img
-                        src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iphone13_hero_09142021_inline.jpg.medium.jpg">
-                    <h1 class="product__title">Iphone 12</h1>
-                    <h3>Featuring a sleek and durable design, an advanced new dual-camera system for improved photos and
-                        videos in low light, and introducing Cinematic mode</h3>
-                    <h2 class="product__price">Price: <span class="product__price__value">1000</span></h2>
-                    <button>Buy</button>
-                </article>
-                <article class="product">
-                    <img
-                        src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iphone13_hero_09142021_inline.jpg.medium.jpg">
-                    <h1 class="product__title">Iphone 12</h1>
-                    <h3>Featuring a sleek and durable design, an advanced new dual-camera system for improved photos and
-                        videos in low light, and introducing Cinematic mode</h3>
-                    <h2 class="product__price">Price: <span class="product__price__value">1000</span></h2>
-                    <button>Buy</button>
-                </article>
-
-            </div>
-
-        </section>
-        <!-- <section class="itemPage">item page</section> -->
-        <!-- <section class="cartPage">cart page</section> -->
-        <!-- <section class="favorites"> favorites</section> -->
+        <div class="Catagory__Products__Container">
+          <article class="product">
+            <img
+              src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iphone13_hero_09142021_inline.jpg.medium.jpg"
+            />
+            <h1 class="product__title">iphone 12</h1>
+            <h3>
+              Featuring a sleek and durable design, an advanced new dual-camera
+              system for improved photos and videos in low light, and
+              introducing Cinematic mode
+            </h3>
+            <h2 class="product__price">
+              Price: <span class="product__price__value">1000</span>
+            </h2>
+            <button>Buy</button>
+          </article>
+          <article class="product">
+            <img
+              src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iphone13_hero_09142021_inline.jpg.medium.jpg"
+            />
+            <h1 class="product__title">Iphone 12</h1>
+            <h3>
+              Featuring a sleek and durable design, an advanced new dual-camera
+              system for improved photos and videos in low light, and
+              introducing Cinematic mode
+            </h3>
+            <h2 class="product__price">
+              Price: <span class="product__price__value">1000</span>
+            </h2>
+            <button>Buy</button>
+          </article>
+          <article class="product">
+            <img
+              src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iphone13_hero_09142021_inline.jpg.medium.jpg"
+            />
+            <h1 class="product__title">Iphone 12</h1>
+            <h3>
+              Featuring a sleek and durable design, an advanced new dual-camera
+              system for improved photos and videos in low light, and
+              introducing Cinematic mode
+            </h3>
+            <h2 class="product__price">
+              Price: <span class="product__price__value">1000</span>
+            </h2>
+            <button>Buy</button>
+          </article>
+          <article class="product">
+            <img
+              src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iphone13_hero_09142021_inline.jpg.medium.jpg"
+            />
+            <h1 class="product__title">Iphone 12</h1>
+            <h3>
+              Featuring a sleek and durable design, an advanced new dual-camera
+              system for improved photos and videos in low light, and
+              introducing Cinematic mode
+            </h3>
+            <h2 class="product__price">
+              Price: <span class="product__price__value">1000</span>
+            </h2>
+            <button>Buy</button>
+          </article>
+        </div>
+      </section>
+      <!-- <section class="itemPage">item page</section> -->
+      <!-- <section class="cartPage">cart page</section> -->
+      <!-- <section class="favorites"> favorites</section> -->
     </div>
-
-
     <script src="./products.js"></script>
     <script src="./main.js"></script>
-</body>
-
+  </body>
 </html>
