@@ -1,5 +1,5 @@
 @import './styles/reset.css';
-
+@import './styles/favorites/favorites.css';
 @import './styles/catagory/catagory.css';
 @import './styles/navBar/navBar.css';
 

@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sahar & Ilay Phone Shop</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/63e82b60bb.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/63e82b60bb.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -28,23 +34,22 @@
         <div class="Nav__Actions">
           <!-- //TODO Add Favorits here  -->
           <div class="sign__In">
-              <div class="Action__Icon">
-                  <img  src="./images/user-solid.svg" alt="">
-                </div>
-                
-                <button>SIGN /<br>REGISTER</button>
+            <div class="Action__Icon">
+              <img src="./images/user-solid.svg" alt="" />
             </div>
-            <div class="sign__In">
-                <div class="Action__Icon">
-                    <img
-                    class="cart"
-                    src="./images/cart-shopping-solid.svg"
-                    alt="My Cart"
-                  /> 
-                </div>
-                  <button>MY CART<br>Items</button>
-              </div>
-          
+
+            <button>SIGN /<br />REGISTER</button>
+          </div>
+          <div class="sign__In">
+            <div class="Action__Icon">
+              <img
+                class="cart"
+                src="./images/cart-shopping-solid.svg"
+                alt="My Cart"
+              />
+            </div>
+            <button>MY CART<br />Items</button>
+          </div>
         </div>
       </div>
       <div class="bottom__Nav">
@@ -60,7 +65,7 @@
 
     <div class="container">
       <!-- <section class="homepage">home page</section> -->
-      <section class="catagoryPage">
+      <section class="catagoryPage" style="display: none">
         <header class="catagoryPage__header">
           <h1>Catagory: <span>Iphones</span></h1>
         </header>
@@ -130,7 +135,71 @@
       </section>
       <!-- <section class="itemPage">item page</section> -->
       <!-- <section class="cartPage">cart page</section> -->
-      <!-- <section class="favorites"> favorites</section> -->
+      <section class="favorites">
+        <h1 class="favorites__title">Our best sellers!</h1>
+        <div class="favorite__Products">
+          <article class="favorite__Product">
+            <img src="./images/iphone13-pro-max-graphite.png" />
+            <h1 class="product__title">Iphone 13 Pro Max</h1>
+            <h3>
+              Featuring a sleek and durable design, an advanced new dual-camera
+              system for improved photos and videos in low light, and
+              introducing Cinematic mode
+            </h3>
+            <h2 class="product__price">
+              Price: <span class="product__price__value">1200</span>
+            </h2>
+            <button>Buy Now</button>
+          </article>
+          <article class="favorite__Product">
+            <img
+              class="temp__Class"
+              src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-01.jpg"
+            />
+            <h1 class="product__title">Iphone 13</h1>
+            <h3>
+              Apple's iPhone 13 features a ceramic shield front, Super Retina
+              XDR display with True Tone and an A15 Bionic chip. The first
+              design change users will notice is the smaller notch.
+            </h3>
+            <h2 class="product__price">
+              Price: <span class="product__price__value">800</span>
+            </h2>
+            <button>Buy Now</button>
+          </article>
+          <article class="favorite__Product">
+            <img
+              src="https://www.officedepot.co.il/wp-content/uploads/2022/02/back-11.png"
+            />
+            <h1 class="product__title">Galaxy S22 Ultra</h1>
+            <h3>
+              The Galaxy S22 Ultra boasts a larger 2.4um pixel sensor for
+              capturing more light and data, as well as a Super Clear Glass lens
+              for capturing nighttime videos without flares
+            </h3>
+            <h2 class="product__price">
+              Price: <span class="product__price__value">900</span>
+            </h2>
+            <button>Buy Now</button>
+          </article>
+          <article class="favorite__Product">
+            <img
+              src="https://ali-buy.com/wp-content/uploads/2020/08/huawei-min.jpg"
+            />
+            <h1 class="product__title">Huawei P40 Pro</h1>
+            <h3>
+              Huawei P40 Pro is officially released in March 2020. The
+              smartphone is pack with 8 GB RAM and 128 GB/256GB/512GB internal
+              storage options. The smartphone is powered by the HiSilicon Kirin
+              990 5G Octa-core processor.
+            </h3>
+            <h2 class="product__price">
+              Price: <span class="product__price__value">750</span>
+            </h2>
+            <button>Buy Now</button>
+          </article>
+        </div>
+      </section>
     </div>
     <script src="./products.js"></script>
     <script src="./main.js"></script>

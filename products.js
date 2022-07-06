@@ -14,8 +14,8 @@ const products = [
             productInfo: `Featuring a sleek and durable design, an advanced new dual-camera system for improved photos and videos in low light, and introducing Cinematic mode`,
             imgUrl:'https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iphone13_hero_09142021_inline.jpg.medium.jpg'
         }, {
-            model: "iphone 13 pro",
-            price: 1000,
+            model: "iphone 13 pro max",
+            price: 1200,
             colors,
             productInfo: 'Featuring a sleek and durable design, an advanced new dual-camera system for improved photos and videos in low light, and introducing Cinematic mode',
             imgUrl:'https://ercell.co.il/wp-content/uploads/2021/10/iphone-13-pro-max-gold-select-3.png'
