@@ -59,6 +59,12 @@
 .Catagory__Products__Container button {
   padding: 8px 50px;
   border: 1px solid rgb(168, 168, 168);
+  border-radius: 5px;
   cursor: pointer;
   margin: 15px 0;
+}
+.Catagory__Products__Container button:hover {
+  color: #91c32f;
+  transition: color 0.1s;
+  background-color: rgba(99, 97, 97, 0.05);
 }/*# sourceMappingURL=catagory.css.map */
