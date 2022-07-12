@@ -64,8 +64,8 @@
     </nav>
 
     <div class="container">
-      <!-- <section class="homepage">home page</section> -->
-      <section class="catagoryPage" style="display: none">
+      <section class="homepage" style="display:none">home page</section>
+       <section class="catagoryPage"style="display:none"> 
         <header class="catagoryPage__header">
           <h1>Catagory: <span>Iphones</span></h1>
         </header>
@@ -132,10 +132,68 @@
             <button>Buy</button>
           </article>
         </div>
+      </section> 
+      <section class="itemPage">
+        <div class="itemPage__Container">
+          <div class="itemPage__Border">
+            <div class="itemPage__Product__Container">
+              <div class="itemPage__productImage">
+                  <img src="./images/iphone13-pro-max-graphite.png" alt="">
+              </div>
+              <div class="itemPage__Product__Info">
+                <h1 class="Product__Title">Accusantium Doloremque</h1>   
+                <div class="info">
+                  <h3>Brand: <span>Apple</span></h3>
+                  <h3>Product Code: <span>15</span></h3>
+                  <h3>Availability: <span>In Stock</span></h3>
+                  <hr>
+                  <h1 class="Info__Price">1200 $</h1>
+                  
+                  <div class="actions">
+                    <label for="qty">
+                      QTY: 
+                      <div class="qty__container">
+
+                        <input type="number" value="1" name="qty" min="1" max="5"/>
+                      </div>
+                    </label>
+                    <button >Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="itemPage__Description">
+              <header>Description</header>
+              <div>
+                <h3>Lorem, ipsum dolor.
+                </h3>
+                <p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, illum!
+                </p>
+              </div>
+              <div>
+                <h3>Lorem, ipsum dolor.
+                </h3>
+                <p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, illum!
+                </p>
+              </div>
+              <div>
+                <h3>Lorem, ipsum dolor.
+                </h3>
+                <p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, illum!
+                </p>
+              </div>
+            </div>
+            </div>
+
+          </div>
+          </div>
+
       </section>
-      <!-- <section class="itemPage">item page</section> -->
-      <!-- <section class="cartPage">cart page</section> -->
-      <section class="favorites">
+      <section class="cartPage"style="display:none">cart page</section>
+       <section class="favorites"style="display:none">
         <h1 class="favorites__title">Our best sellers!</h1>
         <div class="favorite__Products">
           <article class="favorite__Product">
@@ -202,6 +260,7 @@
       </section>
     </div>
     <script src="./products.js"></script>
+
     <script src="./main.js"></script>
   </body>
 </html>
