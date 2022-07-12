@@ -20,6 +20,7 @@
     grid-column-gap: 15px;
     grid-row-gap: 0px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 
     h3 {
         padding: 0 15px;
@@ -60,6 +61,7 @@
     .product__price {
         font-size: 18px;
         margin: 10px 0 0;
+        
 
         &::after {
             content: "$";
@@ -75,8 +77,13 @@
     button {
         padding: 8px 50px;
         border: 1px solid rgb(168, 168, 168);
+        border-radius: 5px;
         cursor: pointer;
         margin: 15px 0;
+        &:hover {
+            color: #91c32f;
+            transition: color 0.1s;
+        background-color: rgba(99, 97, 97, 0.05);}
     }
 
 }

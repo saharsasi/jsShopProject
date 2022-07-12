@@ -31,6 +31,7 @@ nav .upper__Nav .nav__Search button {
   background-color: rgb(145, 198, 47);
   height: 100%;
   padding: 0 10px;
+  cursor: pointer;
 }
 nav .upper__Nav .nav__Search input {
   flex-grow: 1;
@@ -45,6 +46,7 @@ nav .upper__Nav .Nav__Actions .sign__In {
   display: flex;
 }
 nav .upper__Nav .Nav__Actions .sign__In .Action__Icon {
+  cursor: pointer;
   width: 40px;
   height: 40px;
   background-color: #91c32f;
@@ -53,6 +55,9 @@ nav .upper__Nav .Nav__Actions .sign__In .Action__Icon {
   justify-content: center;
   margin-right: 15px;
 }
+nav .upper__Nav .Nav__Actions .sign__In .Action__Icon:hover {
+  outline: 1px solid rgba(0, 0, 0, 0.6);
+}
 nav .upper__Nav .Nav__Actions .sign__In .Action__Icon img {
   width: 30%;
 }
@@ -60,6 +65,10 @@ nav .upper__Nav .Nav__Actions .sign__In button {
   font-size: 13px;
   font-weight: 500;
   margin-right: 20px;
+  cursor: pointer;
+}
+nav .upper__Nav .Nav__Actions .sign__In button:hover {
+  text-decoration: underline;
 }
 nav .upper__Nav .Nav__Actions .cart {
   height: 40px;
