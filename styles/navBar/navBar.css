@@ -1,25 +1,43 @@
 nav {
-  justify-content: space-evenly;
-  background-color: rgb(168, 168, 168);
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #a8a8a8;
   width: 100%;
   position: fixed;
   top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   border-bottom-left-radius: 70px;
   border-bottom-right-radius: 70px;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 nav .upper__Nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #fff;
   height: 100px;
 }
+
 nav .upper__Nav .logo {
   margin-left: 15px;
 }
+
 nav .upper__Nav .nav__Search {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 480px;
   height: 40px;
@@ -27,73 +45,105 @@ nav .upper__Nav .nav__Search {
   border-radius: 8px;
   overflow: hidden;
 }
+
 nav .upper__Nav .nav__Search button {
-  background-color: rgb(145, 198, 47);
+  background-color: #91c62f;
   height: 100%;
   padding: 0 10px;
   cursor: pointer;
 }
+
 nav .upper__Nav .nav__Search input {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   padding: 10px;
   height: 100%;
 }
+
 nav .upper__Nav .Nav__Actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding-right: 15px;
 }
+
 nav .upper__Nav .Nav__Actions .sign__In {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 nav .upper__Nav .Nav__Actions .sign__In .Action__Icon {
   cursor: pointer;
   width: 40px;
   height: 40px;
   background-color: #91c32f;
   border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-right: 15px;
 }
+
 nav .upper__Nav .Nav__Actions .sign__In .Action__Icon:hover {
   outline: 1px solid rgba(0, 0, 0, 0.6);
 }
+
 nav .upper__Nav .Nav__Actions .sign__In .Action__Icon img {
   width: 30%;
 }
+
 nav .upper__Nav .Nav__Actions .sign__In button {
   font-size: 13px;
   font-weight: 500;
   margin-right: 20px;
   cursor: pointer;
 }
+
 nav .upper__Nav .Nav__Actions .sign__In button:hover {
   text-decoration: underline;
 }
+
 nav .upper__Nav .Nav__Actions .cart {
   height: 40px;
   width: 40px;
 }
+
 nav .bottom__Nav {
-  border-bottom: 1px solid rgb(219, 219, 219);
-  border-top: 1px solid rgb(219, 219, 219);
+  border-bottom: 1px solid #dbdbdb;
+  border-top: 1px solid #dbdbdb;
   background-color: #fff;
 }
+
 nav .bottom__Nav ul {
   height: 48px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 nav .bottom__Nav ul li {
   font-size: 1rem;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
   font-weight: 500;
   margin: 0 20px;
   position: relative;
   cursor: pointer;
 }
+
 nav .bottom__Nav ul li:hover {
   color: #91c32f;
+  -webkit-transition: color 0.1s;
   transition: color 0.1s;
-}/*# sourceMappingURL=navBar.css.map */
+}
+/*# sourceMappingURL=navBar.css.map */
