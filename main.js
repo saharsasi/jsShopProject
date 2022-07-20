@@ -6,13 +6,30 @@ function setCatagory(category) {
   renderCatagoryPage(); // calls the function to render the page
 }
 
-function renderCatagoryPage() {
+function renderCatagoryPage(filter) {
+  let filteredPhones = [];
   //! Selectors
+  const catagoryHeader = document.querySelector('.catagoryPage__header');
+
   const productContainer = document.querySelector(
     '.Catagory__Products__Container'
   );
   const catagoryPage = document.querySelector('.catagoryPage');
   const catagoryTitle = document.querySelector('.catagory__title');
+
+  if (filter) {
+    const phones = products.map((catagory) => catagory.phones);
+    filteredPhones = [...phones]
+      .flat()
+      .filter((phone) => phone.model.includes(filter));
+    if (filteredPhones.length === 0) {
+      productContainer.innerText = 'NO PHONES FOUND';
+      return;
+    }
+  } else if (filter === '') {
+    productContainer.innerText = 'NO PHONES FOUND';
+    return;
+  }
 
   //! styles
   resetDisplays();
@@ -23,9 +40,11 @@ function renderCatagoryPage() {
     (product) => product.catagory === gSelectedCatagory
   );
 
-  catagoryTitle.innerText = filteredProducts.catagory;
-  const strHtml = filteredProducts.phones.map((phone) => {
-    return `<article class="product">
+  const strHtml = filter
+    ? filteredPhones.map((phone) => {
+        catagoryHeader.style.display = 'none';
+
+        return `<article class="product">
     <img
       src=${phone.imgUrl} />
     <h1 class="product__title">${phone.model}</h1>
@@ -37,16 +56,33 @@ function renderCatagoryPage() {
     </h2>
     <button  onclick=renderProduct("${phone.id}")>Buy</button>
   </article>`;
-  });
+      })
+    : filteredProducts.phones.map((phone) => {
+        catagoryHeader.style.display = 'flex';
+        catagoryTitle.innerText = filteredProducts.catagory;
+
+        return `<article class="product">
+    <img
+      src=${phone.imgUrl} />
+    <h1 class="product__title">${phone.model}</h1>
+    <h3>
+     ${phone.productInfo}
+    </h3>
+    <h2 class="product__price">
+      Price: <span class="product__price__value">${phone.price}</span>
+    </h2>
+    <button  onclick=renderProduct("${phone.id}")>Buy</button>
+  </article>`;
+      });
 
   productContainer.innerHTML = strHtml.join(''); // join the array to string and swaps every , with a space
 }
 
 function renderProduct(model) {
+  console.log('model', model);
   //! Selectors
   const itemPage = document.querySelector('.itemPage');
   const itemPageContainer = document.querySelector('.itemPage__Container');
-  const catagoryPage = document.querySelector('.catagoryPage');
 
   const productCatagory = products.find(
     // finds the catagory of the product
