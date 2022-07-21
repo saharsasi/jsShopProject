@@ -279,9 +279,6 @@ function renderFavorites() {
     </h2>
     <button  onclick=renderProduct("${phone.id}")>Buy</button>
   </article>`;
-    })
-    .join('');
-
-  console.log('strHtml', strHtml);
+    }).join('');
   elFavorites.innerHTML = strHtml;
 }
