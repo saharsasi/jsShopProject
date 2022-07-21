@@ -107,11 +107,11 @@ function renderProduct(model) {
   const itemPage = document.querySelector('.itemPage');
   const itemPageContainer = document.querySelector('.itemPage__Container');
 
-  const productCatagory = products.find(
-    // finds the catagory of the product
-    (product) => product.catagory === gSelectedCatagory // every time takes 1 product from the array and returns it if the product.catagory is equal to the global selected catagory
-  );
-  const product = productCatagory.phones.find((phone) => phone.id === model); // finds the product in the array
+  // const productCatagory = products.find(
+  //   // finds the catagory of the product
+  //   (product) => product.catagory === gSelectedCatagory // every time takes 1 product from the array and returns it if the product.catagory is equal to the global selected catagory
+  // );
+  const product = flattedPhones.find((phone) => phone.id === model); // finds the product in the array
 
   const strHtml = ` 
   <div class="itemPage__Border">
@@ -279,6 +279,7 @@ function renderFavorites() {
     </h2>
     <button  onclick=renderProduct("${phone.id}")>Buy</button>
   </article>`;
-    }).join('');
+    })
+    .join('');
   elFavorites.innerHTML = strHtml;
 }
