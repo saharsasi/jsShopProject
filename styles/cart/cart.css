@@ -21,6 +21,15 @@
   max-height: 650px;
   padding: 30px;
 }
+.cartPage .cartPage__Border .cartPage__Container .clear__Cart {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  border-bottom: 1px solid rgb(168, 168, 168);
+  border-left: 1px solid rgb(168, 168, 168);
+  border-radius: 6px;
+  font-weight: 700;
+}
 .cartPage .cartPage__Border .cartPage__Container .close__Cart {
   position: absolute;
   top: 6px;
@@ -88,6 +97,19 @@
   font-weight: 700;
   margin: 10px 0;
   text-decoration: underline;
+}
+.cartPage .cartPage__Border .cartPage__Container .cart__Items .cart__Item .cart__Product__Info .cart__Item__Title {
+  font-weight: 700;
+  text-decoration: underline;
+  padding: 10px 0;
+}
+.cartPage .cartPage__Border .cartPage__Container .cart__Items .cart__Item .cart__Product__Info .remove__Item {
+  font-weight: 900;
+  border: 1px solid black;
+  width: 75px;
+  text-align: center;
+  position: absolute;
+  bottom: 1px;
 }
 .cartPage .cartPage__Border .cartPage__Container .cart__Items .cart__Item .cart__Product__Img {
   flex: 1;

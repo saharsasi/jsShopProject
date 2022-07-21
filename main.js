@@ -29,7 +29,6 @@ function renderCatagoryPage(filter) {
     }
   } else if (filter === '') {
     filteredPhones = [...phones].flat();
-    console.log('filteredPhones', filteredPhones);
     return;
   }
 
@@ -92,7 +91,6 @@ function cartClicked() {
 }
 
 function renderProduct(model) {
-  console.log('model', model);
   //! Selectors
   const itemPage = document.querySelector('.itemPage');
   const itemPageContainer = document.querySelector('.itemPage__Container');
@@ -175,7 +173,6 @@ function addToCart(productId) {
     isAlreadyInCart.qty += +currqty;
   }
 
-  console.log('gCart', gCart);
   renderCart();
 
   return;
@@ -199,10 +196,10 @@ function renderCart() {
   const strHtml = gCart.items
     .map((item) => {
       const product = flattedPhones.find((product) => product.id === item.id);
-      console.log('product', product);
       return `<div class="cart__Item">
     <div class="cart__Product__Info">
     <div>
+    <span class="cart__Item__Title">${product.model}</span>
     <h3>
     Quantity:
     </h3>
@@ -214,6 +211,7 @@ function renderCart() {
      </h3>
      <span>${product.price * item.qty}</span>
      </div>
+     <button class="remove__Item" onclick="removeFromCart('${product.id}')">Remove</button>
     </div>
     <div class="cart__Product__Img">
       <img src=${product.imgUrl}>
@@ -230,13 +228,21 @@ function renderCart() {
 
   elCartItems.innerHTML = strHtml;
 }
+function removeFromCart(productId){
+const itemIdx=gCart.items.findIndex((item)=> item.id===productId);
+gCart.items.splice(itemIdx,1);
+renderCart();
+}
+function clearCart(){
+gCart.items.splice(0);
+renderCart();
+}
+
 
 function resetDisplays() {
   const itemPage = document.querySelector('.itemPage');
   const catagoryPage = document.querySelector('.catagoryPage');
-  const cartPage = document.querySelector('.cartPage');
 
-  // cartPage.style.display='none';
   itemPage.style.display = 'none';
   catagoryPage.style.display = 'none';
 }
