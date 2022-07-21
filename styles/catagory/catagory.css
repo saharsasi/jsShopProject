@@ -1,3 +1,7 @@
+.catagoryPage {
+  display: none;
+}
+
 .catagoryPage__header {
   display: flex;
   justify-content: center;

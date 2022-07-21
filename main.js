@@ -4,14 +4,13 @@ const gCart = { total: 0, items: [] };
 const phones = products.map((catagory) => catagory.phones);
 const flattedPhones = [...phones].flat();
 
-document.addEventListener('DOMContentLoaded', renderFavorites);
+  document.addEventListener('DOMContentLoaded', renderFavorites);
 
 const gFavoriteProducts = [
   'iphone13ProMax',
-  'galaxys21',
-  'iphone12Pro',
-  'redmiNote10Pro',
-  'galaxys21',
+  'galaxys22Ultra',
+  'p40Pro',
+  'xiaomi12Pro',
 ];
 const myCart = document.getElementsByClassName('.cart__Action__Icon');
 const Cart = document.querySelector('.cartPage');
@@ -107,10 +106,6 @@ function renderProduct(model) {
   const itemPage = document.querySelector('.itemPage');
   const itemPageContainer = document.querySelector('.itemPage__Container');
 
-  // const productCatagory = products.find(
-  //   // finds the catagory of the product
-  //   (product) => product.catagory === gSelectedCatagory // every time takes 1 product from the array and returns it if the product.catagory is equal to the global selected catagory
-  // );
   const product = flattedPhones.find((phone) => phone.id === model); // finds the product in the array
 
   const strHtml = ` 
@@ -254,17 +249,21 @@ function clearCart() {
 function resetDisplays() {
   const itemPage = document.querySelector('.itemPage');
   const catagoryPage = document.querySelector('.catagoryPage');
+  const favoritesPage=document.querySelector('.favorites');
 
+  favoritesPage.style.display='none';
   itemPage.style.display = 'none';
   catagoryPage.style.display = 'none';
 }
 
 function renderFavorites() {
+  resetDisplays();
+  const favoritesPage=document.querySelector('.favorites');
+  favoritesPage.style.display='block';
   const elFavorites = document.querySelector('.favorite__Products');
   const favoritePhones = gFavoriteProducts.map((phone) =>
     flattedPhones.find((flatPhone) => flatPhone.id === phone)
   );
-  console.log('favoritePhones', favoritePhones);
   const strHtml = favoritePhones
     .map((phone) => {
       return `<article class="product">
@@ -277,9 +276,39 @@ function renderFavorites() {
     <h2 class="product__price">
       Price: <span class="product__price__value">${phone.price}</span>
     </h2>
-    <button  onclick=renderProduct("${phone.id}")>Buy</button>
+    <button onclick=renderProduct("${phone.id}")>Buy</button>
   </article>`;
     })
     .join('');
   elFavorites.innerHTML = strHtml;
+}
+let slideIndex=0;
+function nextPicture(){
+let currPic=document.querySelector('.activeButton');
+let sliderPics=document.querySelectorAll('.slider');
+for(let i=0; i<sliderPics.length; i++){
+    if(sliderPics[i].classList.contains('activeButton')){
+      sliderPics[i].classList.remove('activeButton');
+    }
+  }
+  slideIndex++;
+  if(slideIndex==sliderPics.length){
+    slideIndex=0;
+  }
+  sliderPics[slideIndex].classList.add('activeButton');
+}
+
+function previousPicture(){
+  let currPic=document.querySelector('.activeButton');
+  let sliderPics=document.querySelectorAll('.slider');
+  for(let i=0; i<sliderPics.length; i++){
+    if(sliderPics[i].classList.contains('activeButton')){
+      sliderPics[i].classList.remove('activeButton');
+    }
+  }
+  slideIndex--;
+  if(slideIndex<0){
+    slideIndex=sliderPics.length-1;
+  }
+  sliderPics[slideIndex].classList.add('activeButton');
 }

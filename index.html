@@ -44,12 +44,12 @@
         <li onclick="setCatagory(`samsung`)">Samsung</li>
         <li onclick="setCatagory(`xiaomi`)">Xiaomi</li>
         <li onclick="setCatagory(`huawei`)">Huawei</li>
+        <li onclick="renderFavorites()">Home</li>
       </ul>
     </div>
   </nav>
   <div class="container">
-    <section class="homepage" style="display:none">home page</section>
-    <section class="catagoryPage" style="display:none">
+    <section class="catagoryPage">
       <header class="catagoryPage__header">
         <h1>Catagory: <span class="catagory__title"></span></h1>
       </header>
@@ -146,7 +146,26 @@
   <section class="favorites">
     <h1 class="favorites__title">Our best sellers!</h1>
     <div class="favorite__Products">
-      
+
+    </div>
+    
+    <div class="Image__Slider">
+      <div class="slider__Button">
+        <button onclick="previousPicture()" class="back"><<</button>
+      </div>
+      <div class="slider activeButton">
+        <img src="./images/iphone13ProMaxSLIDER.jpg">
+      </div>
+      <div class="slider">
+        <img src="./images/P40ProSLIDER.jpg">
+      </div>
+      <div class="slider">
+        <img src="./images/S22UltraSLIDER.jpeg">
+      </div>
+      <div class="slider__Button">
+        <button onclick="nextPicture()" class="next">>></button>
+      </div>
+    </div>
   </section>
   </div>
   <script src="./products.js"></script>

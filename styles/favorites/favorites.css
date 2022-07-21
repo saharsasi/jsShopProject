@@ -37,7 +37,30 @@
   height: 200px;
   margin-top: 15px;
 }
-.favorites .favorite__Products .favorite__Product {
+.favorites .favorite__Products .product .product__price {
+  font-size: 18px;
+  margin: 10px 0 0;
+}
+.favorites .favorite__Products .product .product__price::after {
+  content: "$";
+  color: orange;
+}
+.favorites .favorite__Products .product .product__price__value {
+  color: orange;
+}
+.favorites .favorite__Products .product button {
+  padding: 8px 50px;
+  border: 1px solid rgb(168, 168, 168);
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 15px 0;
+}
+.favorites .favorite__Products .product button:hover {
+  color: #91c32f;
+  transition: color 0.1s;
+  background-color: rgba(99, 97, 97, 0.05);
+}
+.favorites .favorite__Product {
   border: 1px solid;
   display: flex;
   flex-direction: column;
@@ -45,40 +68,48 @@
   border: 1px solid rgb(224, 218, 218);
   border-radius: 5px;
 }
-.favorites .favorite__Products .favorite__Product:hover {
+.favorites .favorite__Product:hover {
   box-shadow: 0px 0 10px 0px #888888;
 }
-.favorites .favorite__Products .favorite__Product img {
+.favorites .favorite__Product img {
   height: 200px;
   margin-top: 15px;
 }
-.favorites .favorite__Products .favorite__Product .product__title {
+.favorites .favorite__Product .product__title {
   font-size: 24px;
   margin: 10px 0 0;
 }
-.favorites .favorite__Products .favorite__Product .product__title::first-letter {
+.favorites .favorite__Product .product__title::first-letter {
   text-transform: uppercase;
 }
-.favorites .favorite__Products .favorite__Product .product__price {
-  font-size: 18px;
-  margin: 10px 0 0;
+.favorites .Image__Slider {
+  margin: 50px;
+  display: flex;
+  width: 600px;
 }
-.favorites .favorite__Products .favorite__Product .product__price::after {
-  content: "$";
-  color: orange;
+.favorites .Image__Slider .slider__Button {
+  display: flex;
+  align-items: center;
 }
-.favorites .favorite__Products .favorite__Product .product__price__value {
-  color: orange;
+.favorites .Image__Slider .slider__Button .back {
+  height: 15px;
+  width: 20px;
+  border: 1px solid black;
+  text-align: center;
+  padding-bottom: 20px;
 }
-.favorites .favorite__Products .favorite__Product button {
-  padding: 8px 50px;
+.favorites .Image__Slider .slider__Button .next {
+  height: 15px;
+  width: 20px;
+  border: 1px solid black;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.favorites .Image__Slider .slider {
+  display: none;
   border: 1px solid rgb(168, 168, 168);
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 15px 0;
+  min-width: 550px;
 }
-.favorites .favorite__Products .favorite__Product button:hover {
-  color: #91c32f;
-  transition: color 0.1s;
-  background-color: rgba(99, 97, 97, 0.05);
+.favorites .Image__Slider .slider.activeButton {
+  display: block;
 }/*# sourceMappingURL=favorites.css.map */

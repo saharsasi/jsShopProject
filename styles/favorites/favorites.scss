@@ -37,7 +37,32 @@
               img {
                 height: 200px;
                 margin-top: 15px;
-          
+            }
+            .product__price {
+                font-size: 18px;
+                margin: 10px 0 0;
+        
+                &::after {
+                    content: "$";
+                    color: orange;
+                }
+            }
+        
+            .product__price__value {
+                color: orange;
+            }
+           button{
+                padding: 8px 50px;
+                border: 1px solid rgb(168, 168, 168);
+                border-radius: 5px;
+                cursor: pointer;
+                margin: 15px 0;
+                &:hover {
+                  color: #91c32f;
+                  transition: color 0.1s;
+                  background-color: rgba(99, 97, 97, 0.05);
+                }
+            }
               }
         }
         .favorite__Product{
@@ -54,11 +79,7 @@
         img {
           height: 200px;
           margin-top: 15px;
-    
         }
-       
-        
-     
         .product__title {
             font-size: 24px;
             margin: 10px 0 0;
@@ -67,38 +88,40 @@
                 text-transform: uppercase
             }
         }
-    
-        .product__price {
-            font-size: 18px;
-            margin: 10px 0 0;
-    
-            &::after {
-                content: "$";
-                color: orange;
-            }
-        }
-    
-        .product__price__value {
-            color: orange;
-        }
-        button {
-            padding: 8px 50px;
-            border: 1px solid rgb(168, 168, 168);
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 15px 0;
-            &:hover {
-              color: #91c32f;
-              transition: color 0.1s;
-              background-color: rgba(99, 97, 97, 0.05);
-            }
-        }
-
     }
-
-
+    .Image__Slider{
+        margin: 50px;
+        display:flex;
+        width: 600px;
+      .slider__Button{
+        display:flex;
+        align-items: center;
+        .back{
+            height: 15px;
+            width: 20px;
+            border: 1px solid black;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .next{
+            height:15px;
+            width: 20px;
+            border: 1px solid black;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+      }
+        .slider{
+            display:none;
+            border: 1px solid rgb(168, 168, 168);
+            min-width: 550px;
+            &.activeButton{
+                display:block;
+            }
+        }
+    }
 }
-}
+
 
 
 
