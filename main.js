@@ -1,6 +1,21 @@
 'use strict';
 let gSelectedCatagory = '';
 const gCart = { total: 0, items: [] };
+const phones = products.map((catagory) => catagory.phones);
+const flattedPhones = [...phones].flat();
+
+document.addEventListener('DOMContentLoaded', renderFavorites);
+
+const gFavoriteProducts = [
+  'iphone13ProMax',
+  'galaxys21',
+  'iphone12Pro',
+  'redmiNote10Pro',
+  'galaxys21',
+];
+const myCart = document.getElementsByClassName('.cart__Action__Icon');
+const Cart = document.querySelector('.cartPage');
+const myCartItems = document.querySelector('.my__Cart__Items');
 
 function setCatagory(category) {
   gSelectedCatagory = category; // sets the global selected Category
@@ -78,9 +93,6 @@ function renderCatagoryPage(filter) {
 
   productContainer.innerHTML = strHtml.join(''); // join the array to string and swaps every , with a space
 }
-const myCart = document.getElementsByClassName('.cart__Action__Icon');
-const Cart = document.querySelector('.cartPage');
-const myCartItems = document.querySelector('.my__Cart__Items');
 
 function cartClicked() {
   if (Cart.classList.contains('active')) {
@@ -176,16 +188,13 @@ function addToCart(productId) {
   renderCart();
 
   return;
-
 }
 
 function renderCart() {
   const elCartTotal = document.querySelector('.cart__Total__Price');
   const elCartTotalItems = document.querySelector('.cart__Total__Items');
   const elCartItems = document.querySelector('.cart__Items');
-  const elcartItemsQty = document.querySelector('.my__Cart__Items')
-  const phones = products.map((catagory) => catagory.phones);
-  let flattedPhones = [...phones].flat();
+  const elcartItemsQty = document.querySelector('.my__Cart__Items');
   const totalPrice = gCart.items.map((item) => {
     let price = flattedPhones.find((product) => product.id === item.id).price;
     return price * item.qty;
@@ -211,7 +220,9 @@ function renderCart() {
      </h3>
      <span>${product.price * item.qty}</span>
      </div>
-     <button class="remove__Item" onclick="removeFromCart('${product.id}')">Remove</button>
+     <button class="remove__Item" onclick="removeFromCart('${
+       product.id
+     }')">Remove</button>
     </div>
     <div class="cart__Product__Img">
       <img src=${product.imgUrl}>
@@ -228,16 +239,17 @@ function renderCart() {
 
   elCartItems.innerHTML = strHtml;
 }
-function removeFromCart(productId){
-const itemIdx=gCart.items.findIndex((item)=> item.id===productId);
-gCart.items.splice(itemIdx,1);
-renderCart();
-}
-function clearCart(){
-gCart.items.splice(0);
-renderCart();
+
+function removeFromCart(productId) {
+  const itemIdx = gCart.items.findIndex((item) => item.id === productId);
+  gCart.items.splice(itemIdx, 1);
+  renderCart();
 }
 
+function clearCart() {
+  gCart.items = [];
+  renderCart();
+}
 
 function resetDisplays() {
   const itemPage = document.querySelector('.itemPage');
@@ -245,4 +257,31 @@ function resetDisplays() {
 
   itemPage.style.display = 'none';
   catagoryPage.style.display = 'none';
+}
+
+function renderFavorites() {
+  const elFavorites = document.querySelector('.favorite__Products');
+  const favoritePhones = gFavoriteProducts.map((phone) =>
+    flattedPhones.find((flatPhone) => flatPhone.id === phone)
+  );
+  console.log('favoritePhones', favoritePhones);
+  const strHtml = favoritePhones
+    .map((phone) => {
+      return `<article class="product">
+    <img
+      src=${phone.imgUrl} />
+    <h1 class="product__title">${phone.model}</h1>
+    <h3>
+     ${phone.productInfo}
+    </h3>
+    <h2 class="product__price">
+      Price: <span class="product__price__value">${phone.price}</span>
+    </h2>
+    <button  onclick=renderProduct("${phone.id}")>Buy</button>
+  </article>`;
+    })
+    .join('');
+
+  console.log('strHtml', strHtml);
+  elFavorites.innerHTML = strHtml;
 }
