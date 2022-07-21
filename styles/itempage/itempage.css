@@ -1,84 +1,55 @@
 .itemPage {
   margin-top: 150px;
 }
-
 .itemPage .itemPage__Container {
   width: 100%;
 }
-
 .itemPage .itemPage__Container .itemPage__Border {
   padding: 0 15px;
-  border-left: 1px solid #e0dada;
-  border-right: 1px solid #e0dada;
-  border-bottom: 1px solid #e0dada;
+  border-left: 1px solid rgb(224, 218, 218);
+  border-right: 1px solid rgb(224, 218, 218);
+  border-bottom: 1px solid rgb(224, 218, 218);
   margin-top: 30px;
 }
-
 .itemPage .itemPage__Container .itemPage__Border .itemPage__Product__Container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .itemPage .itemPage__Container .itemPage__Border .itemPage__Product__Container .itemPage__productImage {
   padding: 0 15px;
   margin-top: 20px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 50%;
-          flex: 1 1 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: 1 1 50%;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  justify-content: center;
+  align-content: center;
 }
-
 .itemPage .itemPage__Container .itemPage__Border .itemPage__Product__Container .itemPage__productImage img {
   min-width: 450px;
 }
-
 .itemPage .itemPage__Container .itemPage__Border .itemPage__Product__Container .itemPage__Product__Info {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 50%;
-          flex: 1 1 50%;
+  flex: 1 1 50%;
   padding: 0 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 }
-
 .itemPage .itemPage__Container .itemPage__Border .itemPage__Product__Container .itemPage__Product__Info .Product__Title {
   font-weight: 600;
   text-transform: uppercase;
   font-size: 20px;
   margin: 0 0 15px;
 }
-
 .itemPage .itemPage__Container .itemPage__Border .itemPage__Product__Container .itemPage__Product__Info .Info__Price {
   font-weight: 600;
   font-size: 20px;
   margin-bottom: 20px;
 }
-
 .itemPage .itemPage__Container .itemPage__Border .itemPage__Product__Container .itemPage__Product__Info hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
   border-top: 1px solid #eee;
 }
-
 .itemPage .itemPage__Container .itemPage__Border .itemPage__Product__Container .itemPage__Product__Info .info .actions button {
   width: auto;
   padding: 8px 15px;
@@ -87,40 +58,27 @@
   background-color: #222;
   border-color: transparent;
 }
-
 .itemPage .itemPage__Container .itemPage__Border .itemPage__Product__Container .itemPage__Product__Info .info .actions button:hover {
   background-color: #91c32f;
 }
-
 .itemPage .itemPage__Container .itemPage__Border .itemPage__Product__Container .itemPage__Product__Info .info .actions label {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
-
 .itemPage .itemPage__Container .itemPage__Border .itemPage__Product__Container .itemPage__Product__Info .info .actions label .qty__container {
   justify-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border: 1px solid #e0dada;
+  justify-content: center;
+  border: 1px solid rgb(224, 218, 218);
   height: 50px;
   width: 50px;
   margin-left: 5px;
 }
-
 .itemPage .itemPage__Container .itemPage__Border .itemPage__Product__Container .itemPage__Product__Info .info .actions label .qty__container input {
   height: 100%;
   width: 100%;
   padding-left: 25%;
 }
-
 .itemPage .itemPage__Container .itemPage__Border .itemPage__Description header {
   text-align: center;
   color: #555;
@@ -129,27 +87,22 @@
   border-bottom: 1px solid #ddd;
   margin-bottom: 40px;
 }
-
 .itemPage .itemPage__Container .itemPage__Border .itemPage__Description div {
   color: #7a7a7a;
   color: #7a7a7a;
   padding: 0 40px;
   margin-bottom: 10px;
 }
-
 .itemPage .itemPage__Container .itemPage__Border .itemPage__Description div:last-child {
   padding-bottom: 40px;
 }
-
 .itemPage .itemPage__Container .itemPage__Border .itemPage__Description div h3 {
   color: #222;
   font-size: 16px;
   font-weight: 500;
 }
-
 .itemPage .itemPage__Container .itemPage__Border .itemPage__Description div p {
   font-weight: 400;
   line-height: 14px;
   font-size: 14px;
-}
-/*# sourceMappingURL=itempage.css.map */
+}/*# sourceMappingURL=itempage.css.map */

@@ -3,6 +3,7 @@
 @import './styles/catagory/catagory.css';
 @import './styles/navBar/navBar.css';
 @import './styles/itempage/itempage.css';
+@import './styles/cart/cart.css';
 *{
     font-family: 'Poppins', sans-serif;
 }

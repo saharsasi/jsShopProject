@@ -1,0 +1,87 @@
+.cartPage {
+  display: flex;
+  position: absolute;
+  right: -630px;
+  top: 15%;
+  background-color: white;
+  opacity: 0.9;
+  transition: 1s;
+}
+.cartPage.active {
+  right: 0px;
+  transition: 1s;
+}
+.cartPage .cartPage__Border {
+  border: 1px solid rgb(168, 168, 168);
+  margin: 5px;
+  border-radius: 6px;
+}
+.cartPage .cartPage__Border .cartPage__Container {
+  width: 600px;
+  max-height: 650px;
+  padding: 30px;
+}
+.cartPage .cartPage__Border .cartPage__Container .final__Purchase {
+  width: 100px;
+  height: 40px;
+  margin: 15px;
+  margin-left: 40%;
+  border: 1px solid rgb(168, 168, 168);
+  text-align: center;
+  background-color: red;
+  font-weight: 700;
+  position: relative;
+  right: 0;
+}
+.cartPage .cartPage__Border .cartPage__Container .cart__Footer {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+  border-top: 1px solid rgb(168, 168, 168);
+}
+.cartPage .cartPage__Border .cartPage__Container .cart__Footer h3 {
+  font-weight: 700;
+  text-decoration: underline;
+}
+.cartPage .cartPage__Border .cartPage__Container .cart__Header {
+  font-weight: 700;
+  text-decoration: underline;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgb(168, 168, 168);
+}
+.cartPage .cartPage__Border .cartPage__Container .cart__Items {
+  max-height: 420px;
+  min-height: 75px;
+  overflow-y: auto;
+  padding-right: 10px;
+  position: relative;
+  padding-top: 20px;
+}
+.cartPage .cartPage__Border .cartPage__Container .cart__Items .cart__Item {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  align-items: flex-start;
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid rgb(168, 168, 168);
+}
+.cartPage .cartPage__Border .cartPage__Container .cart__Items .cart__Item:last-child {
+  border-bottom: none;
+  margin-bottom: 5px;
+  padding-bottom: 0px;
+}
+.cartPage .cartPage__Border .cartPage__Container .cart__Items .cart__Item .cart__Product__Info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cartPage .cartPage__Border .cartPage__Container .cart__Items .cart__Item .cart__Product__Info h3 {
+  font-weight: 700;
+  margin: 10px 0;
+  text-decoration: underline;
+}
+.cartPage .cartPage__Border .cartPage__Container .cart__Items .cart__Item .cart__Product__Img {
+  flex: 1;
+  height: 100px img;
+  height-height: 100px;
+}/*# sourceMappingURL=cart.css.map */

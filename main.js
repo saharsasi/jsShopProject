@@ -77,6 +77,17 @@ function renderCatagoryPage(filter) {
 
   productContainer.innerHTML = strHtml.join(''); // join the array to string and swaps every , with a space
 }
+const myCart=document.getElementsByClassName('.cart__Action__Icon');
+const Cart=document.querySelector('.cartPage');
+const myCartItems=document.querySelector('.my__Cart__Items');
+function cartClicked(){
+    if(Cart.classList.contains("active")){
+      Cart.classList.remove("active");
+    }
+    else{
+      Cart.classList.add("active");
+    }
+  }
 
 function renderProduct(model) {
   console.log('model', model);
@@ -111,11 +122,11 @@ function renderProduct(model) {
             QTY:
             <div class="qty__container">
 
-              <input type="number" value="1" name="qty" min="1" max="5" />
+              <input class="prod__QTY" type="number" value="1" name="qty" min="1" max="5" />
             </div>
             
           </label>
-          <button>Add to Cart</button>
+          <button class="add__To__Cart">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -149,12 +160,54 @@ function renderProduct(model) {
 
   resetDisplays();
   itemPage.style.display = 'block';
+
+  let button=document.querySelector('.add__To__Cart');
+  button.addEventListener("click", function addToCart(){
+    let cartItems=document.querySelector('.cart__Items');
+    let prodQTY=document.querySelector('.prod__QTY');
+    let cartTotalItems=document.querySelector('.cart__Total__Items');
+    let cartTotalPrice=document.querySelector('.cart__Total__Price');
+    cartItems.innerHTML+=`
+           <div class="cart__Item">
+             <div class="cart__Product__Info">
+             <div>
+             <h3>
+             Quantity:
+             </h3>
+             <span>${prodQTY.value}</span>
+             </div>
+              <div>
+              <h3>
+              Price:
+              </h3>
+              <span>${(product.price)*prodQTY.value}</span>
+              </div>
+             </div>
+             <div class="cart__Product__Img">
+               <img src=${product.imgUrl}>
+             </div>
+             
+           </div>
+         </div>
+
+    </div>
+
+  </div>`;
+  cartTotalItems.innerText=(+cartTotalItems.innerText+(+prodQTY.value));
+  cartTotalPrice.innerText=(+cartTotalPrice.innerText+(+(product.price)*(+prodQTY.value)));
+  myCartItems.innerText='('+cartTotalItems.innerText+')';  
+  })
 }
 
 function resetDisplays() {
   const itemPage = document.querySelector('.itemPage');
   const catagoryPage = document.querySelector('.catagoryPage');
+  const cartPage=document.querySelector('.cartPage');
 
+  // cartPage.style.display='none';
   itemPage.style.display = 'none';
   catagoryPage.style.display = 'none';
+  
 }
+
+
