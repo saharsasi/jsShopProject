@@ -1,5 +1,6 @@
 'use strict';
 let gSelectedCatagory = '';
+const gCart = { total: 0, items: [] };
 
 function setCatagory(category) {
   gSelectedCatagory = category; // sets the global selected Category
@@ -17,8 +18,8 @@ function renderCatagoryPage(filter) {
   const catagoryPage = document.querySelector('.catagoryPage');
   const catagoryTitle = document.querySelector('.catagory__title');
 
+  const phones = products.map((catagory) => catagory.phones);
   if (filter) {
-    const phones = products.map((catagory) => catagory.phones);
     filteredPhones = [...phones]
       .flat()
       .filter((phone) => phone.model.includes(filter));
@@ -27,7 +28,8 @@ function renderCatagoryPage(filter) {
       return;
     }
   } else if (filter === '') {
-    productContainer.innerText = 'NO PHONES FOUND';
+    filteredPhones = [...phones].flat();
+    console.log('filteredPhones', filteredPhones);
     return;
   }
 
@@ -77,17 +79,17 @@ function renderCatagoryPage(filter) {
 
   productContainer.innerHTML = strHtml.join(''); // join the array to string and swaps every , with a space
 }
-const myCart=document.getElementsByClassName('.cart__Action__Icon');
-const Cart=document.querySelector('.cartPage');
-const myCartItems=document.querySelector('.my__Cart__Items');
-function cartClicked(){
-    if(Cart.classList.contains("active")){
-      Cart.classList.remove("active");
-    }
-    else{
-      Cart.classList.add("active");
-    }
+const myCart = document.getElementsByClassName('.cart__Action__Icon');
+const Cart = document.querySelector('.cartPage');
+const myCartItems = document.querySelector('.my__Cart__Items');
+
+function cartClicked() {
+  if (Cart.classList.contains('active')) {
+    Cart.classList.remove('active');
+  } else {
+    Cart.classList.add('active');
   }
+}
 
 function renderProduct(model) {
   console.log('model', model);
@@ -122,11 +124,13 @@ function renderProduct(model) {
             QTY:
             <div class="qty__container">
 
-              <input class="prod__QTY" type="number" value="1" name="qty" min="1" max="5" />
+              <input  class="prod__QTY" type="number" value="1" name="qty" min="1" max="5" />
             </div>
             
           </label>
-          <button class="add__To__Cart">Add to Cart</button>
+          <button class="add__To__Cart" onclick="addToCart('${
+            product.id
+          }')">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -160,54 +164,79 @@ function renderProduct(model) {
 
   resetDisplays();
   itemPage.style.display = 'block';
+}
 
-  let button=document.querySelector('.add__To__Cart');
-  button.addEventListener("click", function addToCart(){
-    let cartItems=document.querySelector('.cart__Items');
-    let prodQTY=document.querySelector('.prod__QTY');
-    let cartTotalItems=document.querySelector('.cart__Total__Items');
-    let cartTotalPrice=document.querySelector('.cart__Total__Price');
-    cartItems.innerHTML+=`
-           <div class="cart__Item">
-             <div class="cart__Product__Info">
-             <div>
-             <h3>
-             Quantity:
-             </h3>
-             <span>${prodQTY.value}</span>
-             </div>
-              <div>
-              <h3>
-              Price:
-              </h3>
-              <span>${(product.price)*prodQTY.value}</span>
-              </div>
-             </div>
-             <div class="cart__Product__Img">
-               <img src=${product.imgUrl}>
-             </div>
-             
-           </div>
-         </div>
+function addToCart(productId) {
+  const currqty = document.querySelector('.prod__QTY').value;
+  const isAlreadyInCart = gCart.items.find((item) => item.id === productId);
+  if (!isAlreadyInCart) {
+    gCart.items.push({ id: productId, qty: +currqty });
+  } else {
+    isAlreadyInCart.qty += +currqty;
+  }
 
+  console.log('gCart', gCart);
+  renderCart();
+
+  return;
+
+}
+
+function renderCart() {
+  const elCartTotal = document.querySelector('.cart__Total__Price');
+  const elCartTotalItems = document.querySelector('.cart__Total__Items');
+  const elCartItems = document.querySelector('.cart__Items');
+  const elcartItemsQty = document.querySelector('.my__Cart__Items')
+  const phones = products.map((catagory) => catagory.phones);
+  let flattedPhones = [...phones].flat();
+  const totalPrice = gCart.items.map((item) => {
+    let price = flattedPhones.find((product) => product.id === item.id).price;
+    return price * item.qty;
+  });
+  elCartTotal.innerText = totalPrice.reduce((acc, curr) => acc + curr, 0);
+  elCartTotalItems.innerText = gCart.items.length;
+  elcartItemsQty.innerText = gCart.items.length;
+  const strHtml = gCart.items
+    .map((item) => {
+      const product = flattedPhones.find((product) => product.id === item.id);
+      console.log('product', product);
+      return `<div class="cart__Item">
+    <div class="cart__Product__Info">
+    <div>
+    <h3>
+    Quantity:
+    </h3>
+    <span>${item.qty}</span>
     </div>
+     <div>
+     <h3>
+     Price:
+     </h3>
+     <span>${product.price * item.qty}</span>
+     </div>
+    </div>
+    <div class="cart__Product__Img">
+      <img src=${product.imgUrl}>
+    </div>
+    
+  </div>
+</div>
 
-  </div>`;
-  cartTotalItems.innerText=(+cartTotalItems.innerText+(+prodQTY.value));
-  cartTotalPrice.innerText=(+cartTotalPrice.innerText+(+(product.price)*(+prodQTY.value)));
-  myCartItems.innerText='('+cartTotalItems.innerText+')';  
-  })
+</div>
+
+</div>`;
+    })
+    .join('');
+
+  elCartItems.innerHTML = strHtml;
 }
 
 function resetDisplays() {
   const itemPage = document.querySelector('.itemPage');
   const catagoryPage = document.querySelector('.catagoryPage');
-  const cartPage=document.querySelector('.cartPage');
+  const cartPage = document.querySelector('.cartPage');
 
   // cartPage.style.display='none';
   itemPage.style.display = 'none';
   catagoryPage.style.display = 'none';
-  
 }
-
-

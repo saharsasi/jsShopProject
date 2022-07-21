@@ -18,8 +18,8 @@
     <div class="upper__Nav">
       <img class="logo" src="/images/Logo.png" title="Your Store" alt="Your Store" />
       <div class="nav__Search">
-        <input type="text" placeholder="Search" oninput="renderCatagoryPage(event.target.value)"/>
-        <button >Search</button>
+        <input type="text" placeholder="Search" oninput="renderCatagoryPage(event.target.value)" />
+        <button>Search</button>
       </div>
       <div class="Nav__Actions">
         <!-- //TODO Add Favorits here  -->
@@ -31,12 +31,12 @@
           <button>SIGN /<br />REGISTER</button>
         </div>
         <div class="my__Cart" ">
-          <div class="cart__Action__Icon">
-            <img class="cart__Img" src="./images/cart-shopping-solid.svg" alt="My Cart" />
-          </div>
-          <button onclick="cartClicked()">MY CART<br />Items <span class="my__Cart__Items">(0)</span></button>
+          <div class=" cart__Action__Icon">
+          <img class="cart__Img" src="./images/cart-shopping-solid.svg" alt="My Cart" />
         </div>
+        <button onclick="cartClicked()">MY CART<br />Items (<span class="my__Cart__Items">0</span>)</button>
       </div>
+    </div>
     </div>
     <div class="bottom__Nav">
       <ul>
@@ -115,7 +115,7 @@
       </div>
     </section>
     <section class="itemPage" style="display:none">
-      <div class="itemPage__Container" >
+      <div class="itemPage__Container">
         <div class="itemPage__Border">
           <div class="itemPage__Product__Container">
             <div class="itemPage__productImage">
@@ -173,27 +173,27 @@
   </div>
   </section>
   <section class="cartPage" style="display:block">
-   <div class="cartPage__Border">
-     <div class="cartPage__Container">
-          <h2 class="cart__Header">My Shopping Cart</h2>
-          <div class="cart__Items">
-            
-          </div>
-          <div class="cart__Footer">
-               <div>
-                <h3>Total items:</h3>
-                <span class="cart__Total__Items">0</span>
-               </div>
-               <div>
-                <h3>Total amount:</h3>
-                <span class="cart__Total__Price">0</span>
-               </div>
-          </div>
-          <button class="final__Purchase">Buy now</button>
+    <div class="cartPage__Border">
+      <div class="cartPage__Container">
+        <h2 class="cart__Header">My Shopping Cart</h2>
+        <div class="cart__Items">
 
-     </div>
+        </div>
+        <div class="cart__Footer">
+          <div>
+            <h3>Total items:</h3>
+            <span class="cart__Total__Items">0</span>
+          </div>
+          <div>
+            <h3>Total amount:</h3>
+            <span class="cart__Total__Price">0</span>
+          </div>
+        </div>
+        <button class="final__Purchase">Buy now</button>
 
-   </div>
+      </div>
+
+    </div>
   </section>
   <section class="favorites" style="display:none">
     <h1 class="favorites__title">Our best sellers!</h1>
