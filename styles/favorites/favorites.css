@@ -1,5 +1,7 @@
 .favorites {
   margin: 0 150px;
+  flex-direction: column;
+  align-content: center;
 }
 .favorites .favorites__title {
   font-size: 70px;
@@ -83,13 +85,20 @@
   text-transform: uppercase;
 }
 .favorites .Image__Slider {
-  margin: 50px;
   display: flex;
-  width: 600px;
+  margin: 50px;
+  padding-bottom: 100px;
+  display: flex;
+  max-width: 900px;
+  max-height: 400px;
+  background-color: rgb(168, 168, 168);
 }
 .favorites .Image__Slider .slider__Button {
   display: flex;
+  padding-top: 50px;
   align-items: center;
+  max-width: 900px;
+  max-height: 400px;
 }
 .favorites .Image__Slider .slider__Button .back {
   height: 15px;
@@ -107,9 +116,11 @@
 }
 .favorites .Image__Slider .slider {
   display: none;
-  border: 1px solid rgb(168, 168, 168);
-  min-width: 550px;
 }
 .favorites .Image__Slider .slider.activeButton {
   display: block;
+}
+.favorites .Image__Slider .slider img {
+  width: 900px;
+  height: 400px;
 }/*# sourceMappingURL=favorites.css.map */

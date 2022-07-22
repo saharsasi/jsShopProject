@@ -2,7 +2,6 @@ nav {
   justify-content: space-evenly;
   background-color: rgb(168, 168, 168);
   width: 100%;
-  position: fixed;
   top: 0;
   display: flex;
   border-bottom-left-radius: 70px;
